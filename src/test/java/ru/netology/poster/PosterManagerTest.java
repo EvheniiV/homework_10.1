@@ -87,7 +87,7 @@ public class PosterManagerTest {
         poster.findAll();
 
         String[] expected = testArrayFindAllThree;
-        String[] actual = poster.getgitPoster();
+        String[] actual = poster.getPoster();
 
         Assertions.assertArrayEquals(expected, actual);
     }
