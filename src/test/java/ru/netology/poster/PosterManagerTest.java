@@ -57,7 +57,7 @@ public class PosterManagerTest {
     };
 
     @Test
-    public void SetPosterTest() {
+    public void setPosterTest() {
         PosterManager poster = new PosterManager();
         poster.setPoster(testArray);
 
@@ -68,7 +68,7 @@ public class PosterManagerTest {
     }
 
     @Test
-    public void AddFilmTest() {
+    public void addFilmTest() {
         PosterManager poster = new PosterManager();
         poster.setPoster(testArray);
         poster.addFilm("Карамора");
@@ -81,7 +81,7 @@ public class PosterManagerTest {
     }
 
     @Test
-    public void FindAllWithParameterTest() {
+    public void findAllWithParameterTest() {
         PosterManager poster = new PosterManager(3);
         poster.setPoster(testArray);
         poster.findAll();
@@ -93,7 +93,7 @@ public class PosterManagerTest {
     }
 
     @Test
-    public void FindAllDefaultQuantytiTest() {
+    public void findAllDefaultQuantytiTest() {
         PosterManager poster = new PosterManager();
         poster.setPoster(testArray);
         poster.findAll();
@@ -105,7 +105,7 @@ public class PosterManagerTest {
     }
 
     @Test
-    public void FindLastWithParameterTest() {
+    public void findLastWithParameterTest() {
         PosterManager poster = new PosterManager(7);
         poster.setPoster(testArray);
         poster.findLast();
@@ -117,7 +117,7 @@ public class PosterManagerTest {
     }
 
     @Test
-    public void FindLastDefaultQuantytiTest() {
+    public void findLastDefaultQuantytiTest() {
         PosterManager poster = new PosterManager();
         poster.setPoster(testArray);
         poster.findLast();
