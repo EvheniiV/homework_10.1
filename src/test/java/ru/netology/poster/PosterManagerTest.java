@@ -30,6 +30,15 @@ public class PosterManagerTest {
             "Багровые реки",
     };
 
+    public String[] testArrayFindAllDefault = new String[]{
+            "Бладшот",
+            "Бэтмен",
+            "Багровые реки",
+            "Крепкий орешек",
+            "Человек невидимка"
+
+    };
+
     public String[] testArrayFindLastSeven = new String[]{
             "Голодные игры",
             "Чужой",
@@ -62,7 +71,7 @@ public class PosterManagerTest {
     public void AddFilmTest() {
         PosterManager poster = new PosterManager();
         poster.setPoster(testArray);
-        poster.AddFilm("Карамора");
+        poster.addFilm("Карамора");
 
         String[] expected = testArrayAdd;
         String[] actual = poster.getPoster();
@@ -72,22 +81,34 @@ public class PosterManagerTest {
     }
 
     @Test
-    public void FindAllTest() {
+    public void FindAllWithParameterTest() {
         PosterManager poster = new PosterManager(3);
         poster.setPoster(testArray);
-        poster.FindAll();
+        poster.findAll();
 
         String[] expected = testArrayFindAllThree;
+        String[] actual = poster.getgitPoster();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void FindAllDefaultQuantytiTest() {
+        PosterManager poster = new PosterManager();
+        poster.setPoster(testArray);
+        poster.findAll();
+
+        String[] expected = testArrayFindAllDefault;
         String[] actual = poster.getPoster();
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void FindLastTest() {
+    public void FindLastWithParameterTest() {
         PosterManager poster = new PosterManager(7);
         poster.setPoster(testArray);
-        poster.FindLast();
+        poster.findLast();
 
         String[] expected = testArrayFindLastSeven;
         String[] actual = poster.getPoster();
@@ -99,7 +120,7 @@ public class PosterManagerTest {
     public void FindLastDefaultQuantytiTest() {
         PosterManager poster = new PosterManager();
         poster.setPoster(testArray);
-        poster.FindLast();
+        poster.findLast();
 
         String[] expected = testArrayFindLastDefault;
         String[] actual = poster.getPoster();

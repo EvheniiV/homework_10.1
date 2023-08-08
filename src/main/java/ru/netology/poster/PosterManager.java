@@ -20,7 +20,7 @@ public class PosterManager {
         return poster;
     }
 
-    public void AddFilm(String filmName) {
+    public void addFilm(String filmName) {
         String[] tmp = new String[poster.length + 1];
         for (int i = 0; i < poster.length; i++) {
             tmp[i] = poster[i];
@@ -29,7 +29,7 @@ public class PosterManager {
         poster = tmp;
     }
 
-    public void FindAll() {
+    public void findAll() {
         String[] tmp = new String[quantyti];
         for (int i = 0; i < tmp.length; i++) {
             tmp[i] = poster[i];
@@ -37,7 +37,7 @@ public class PosterManager {
         poster = tmp;
     }
 
-    public void FindLast() {
+    public void findLast() {
         String[] tmp = new String[quantyti];
         for (int i = tmp.length - 1; i >= 0; i--) {
             tmp[i] = poster[poster.length - 1 - i];
