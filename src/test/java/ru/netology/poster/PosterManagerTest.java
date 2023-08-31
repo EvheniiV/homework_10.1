@@ -42,7 +42,7 @@ public class PosterManagerTest {
                 "Голодные игры",
                 "Карамора"
         };
-        String[] actual = poster.getPoster();
+        String[] actual = poster.getAnswer();
 
         Assertions.assertArrayEquals(expected, actual);
 
@@ -59,7 +59,7 @@ public class PosterManagerTest {
                 "Бэтмен",
                 "Багровые реки",
         };
-        String[] actual = poster.getPoster();
+        String[] actual = poster.getAnswer();
 
         Assertions.assertArrayEquals(expected, actual);
     }
@@ -77,7 +77,7 @@ public class PosterManagerTest {
                 "Крепкий орешек",
                 "Человек невидимка"
         };
-        String[] actual = poster.getPoster();
+        String[] actual = poster.getAnswer();
 
         Assertions.assertArrayEquals(expected, actual);
     }
@@ -97,7 +97,7 @@ public class PosterManagerTest {
                 "Бэтмен",
                 "Бладшот"
         };
-        String[] actual = poster.getPoster();
+        String[] actual = poster.getAnswer();
 
         Assertions.assertArrayEquals(expected, actual);
     }
@@ -115,7 +115,7 @@ public class PosterManagerTest {
                 "Крепкий орешек",
                 "Багровые реки"
         };
-        String[] actual = poster.getPoster();
+        String[] actual = poster.getAnswer();
 
         Assertions.assertArrayEquals(expected, actual);
     }
