@@ -42,7 +42,7 @@ public class PosterManagerTest {
                 "Голодные игры",
                 "Карамора"
         };
-        String[] actual = poster.getAnswer();
+        String[] actual = poster.getPoster();
 
         Assertions.assertArrayEquals(expected, actual);
 

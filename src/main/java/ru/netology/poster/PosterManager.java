@@ -31,7 +31,7 @@ public class PosterManager {
             tmp[i] = poster[i];
         }
         tmp[tmp.length - 1] = filmName;
-        return answer = tmp;
+        return poster = tmp;
     }
 
     public String[] findAll() {
