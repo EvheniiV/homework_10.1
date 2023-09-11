@@ -3,7 +3,6 @@ package ru.netology.poster;
 public class PosterManager {
     private int quantyti;
     private String[] poster = new String[quantyti];
-    private String[] answer = new String[0];
 
     public PosterManager() {
         quantyti = 5;
@@ -21,9 +20,6 @@ public class PosterManager {
         return poster;
     }
 
-    public String[] getAnswer() {
-        return answer;
-    }
 
     public String[] addFilm(String filmName) {
         String[] tmp = new String[poster.length + 1];
@@ -31,7 +27,8 @@ public class PosterManager {
             tmp[i] = poster[i];
         }
         tmp[tmp.length - 1] = filmName;
-        return poster = tmp;
+        poster = tmp;
+        return poster;
     }
 
     public String[] findAll() {
@@ -39,7 +36,7 @@ public class PosterManager {
         for (int i = 0; i < tmp.length; i++) {
             tmp[i] = poster[i];
         }
-        return answer = tmp;
+        return tmp;
     }
 
     public String[] findLast() {
@@ -47,7 +44,7 @@ public class PosterManager {
         for (int i = tmp.length - 1; i >= 0; i--) {
             tmp[i] = poster[poster.length - 1 - i];
         }
-        return answer = tmp;
+        return tmp;
     }
 }
 
