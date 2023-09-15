@@ -2,19 +2,25 @@ package ru.netology.poster;
 
 public class PosterManager {
     private int quantyti;
-    private String[] poster = new String[quantyti];
+    private String[] poster = new String[]{
+            "Бладшот",
+            "Бэтмен",
+            "Багровые реки",
+            "Крепкий орешек",
+            "Человек невидимка",
+            "Чужой",
+            "Голодные игры"
+    };
 
     public PosterManager() {
         quantyti = 5;
     }
 
     public PosterManager(int quantyti) {
+
         this.quantyti = quantyti;
     }
 
-    public void setPoster(String[] poster) {
-        this.poster = poster;
-    }
 
     public String[] getPoster() {
         return poster;
@@ -40,11 +46,20 @@ public class PosterManager {
     }
 
     public String[] findLast() {
-        String[] tmp = new String[quantyti];
-        for (int i = tmp.length - 1; i >= 0; i--) {
-            tmp[i] = poster[poster.length - 1 - i];
+        String[] tmp = new String[0];
+        if (quantyti > poster.length) {
+            tmp = new String[poster.length];
+            for (int i = tmp.length - 1; i >= 0; i--) {
+                tmp[i] = poster[poster.length - 1 - i];
+            }
+        } else {
+            tmp = new String[quantyti];
+            for (int i = tmp.length - 1; i >= 0; i--) {
+                tmp[i] = poster[poster.length - 1 - i];
+            }
+
+
         }
         return tmp;
     }
 }
-
