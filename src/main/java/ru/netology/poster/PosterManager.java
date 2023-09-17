@@ -38,9 +38,17 @@ public class PosterManager {
     }
 
     public String[] findAll() {
-        String[] tmp = new String[quantyti];
-        for (int i = 0; i < tmp.length; i++) {
-            tmp[i] = poster[i];
+        String[] tmp = new String[0];
+        if (quantyti > poster.length) {
+            tmp = new String[poster.length];
+            for (int i = 0; i < tmp.length; i++) {
+                tmp[i] = poster[i];
+            }
+        } else {
+            tmp = new String[quantyti];
+            for (int i = 0; i < tmp.length; i++) {
+                tmp[i] = poster[i];
+            }
         }
         return tmp;
     }

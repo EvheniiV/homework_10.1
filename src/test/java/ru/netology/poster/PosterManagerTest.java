@@ -42,6 +42,25 @@ public class PosterManagerTest {
     }
 
     @Test
+    public void findAllWithParameterOverLimitTest() {
+        PosterManager poster = new PosterManager(25);
+        poster.findAll();
+
+        String[] expected = new String[]{
+                "Бладшот",
+                "Бэтмен",
+                "Багровые реки",
+                "Крепкий орешек",
+                "Человек невидимка",
+                "Чужой",
+                "Голодные игры"
+        };
+        String[] actual = poster.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
     public void findAllDefaultQuantytiTest() {
         PosterManager poster = new PosterManager();
         poster.findAll();
