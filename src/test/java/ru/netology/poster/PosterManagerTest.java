@@ -5,46 +5,20 @@ import org.junit.jupiter.api.Test;
 
 public class PosterManagerTest {
 
+    String[] testArray = new String[]{
+            "Бладшот",
+            "Бэтмен",
+            "Багровые реки",
+            "Крепкий орешек",
+            "Человек невидимка",
+            "Чужой",
+            "Голодные игры"
+    };
+
     @Test
     public void addFilmTest() {
         PosterManager poster = new PosterManager();
-        poster.addFilm("Карамора");
-
-        String[] expected = new String[]{
-                "Бладшот",
-                "Бэтмен",
-                "Багровые реки",
-                "Крепкий орешек",
-                "Человек невидимка",
-                "Чужой",
-                "Голодные игры",
-                "Карамора"
-        };
-        String[] actual = poster.getPoster();
-
-        Assertions.assertArrayEquals(expected, actual);
-
-    }
-
-    @Test
-    public void findAllWithParameterTest() {
-        PosterManager poster = new PosterManager(3);
-        poster.findAll();
-
-        String[] expected = new String[]{
-                "Бладшот",
-                "Бэтмен",
-                "Багровые реки",
-        };
-        String[] actual = poster.findAll();
-
-        Assertions.assertArrayEquals(expected, actual);
-    }
-
-    @Test
-    public void findAllWithParameterOverLimitTest() {
-        PosterManager poster = new PosterManager(25);
-        poster.findAll();
+        poster.addFilm(testArray);
 
         String[] expected = new String[]{
                 "Бладшот",
@@ -55,15 +29,32 @@ public class PosterManagerTest {
                 "Чужой",
                 "Голодные игры"
         };
+        String[] actual = poster.getPoster();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void findAllWithParameterTest() {
+        PosterManager poster = new PosterManager(3);
+        poster.addFilm(testArray);
+
+        String[] expected = new String[]{
+                "Бладшот",
+                "Бэтмен",
+                "Багровые реки",
+        };
         String[] actual = poster.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
     }
 
+
     @Test
     public void findAllDefaultQuantytiTest() {
         PosterManager poster = new PosterManager();
-        poster.findAll();
+        poster.addFilm(testArray);
 
         String[] expected = new String[]{
                 "Бладшот",
@@ -80,7 +71,7 @@ public class PosterManagerTest {
     @Test
     public void findLastWithParameterTest() {
         PosterManager poster = new PosterManager(7);
-        poster.findLast();
+        poster.addFilm(testArray);
 
         String[] expected = new String[]{
                 "Голодные игры",
@@ -99,7 +90,7 @@ public class PosterManagerTest {
     @Test
     public void findLastWithParameterOverLimitTest() {
         PosterManager poster = new PosterManager(25);
-        poster.findLast();
+        poster.addFilm(testArray);
 
         String[] expected = new String[]{
                 "Голодные игры",
@@ -118,7 +109,7 @@ public class PosterManagerTest {
     @Test
     public void findLastDefaultQuantytiTest() {
         PosterManager poster = new PosterManager();
-        poster.findLast();
+        poster.addFilm(testArray);
 
         String[] expected = new String[]{
                 "Голодные игры",
